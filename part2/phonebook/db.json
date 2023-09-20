@@ -19,6 +19,16 @@
       "name": "Mary Poppendieck",
       "number": "39-23-6423122",
       "id": 4
+    },
+    {
+      "id": 6,
+      "name": "Pedro Diaz",
+      "number": "1258741"
+    },
+    {
+      "id": 7,
+      "name": "Pedro",
+      "number": "6"
     }
   ]
 }
