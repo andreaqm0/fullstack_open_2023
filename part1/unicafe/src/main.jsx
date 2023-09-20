@@ -18,7 +18,7 @@ const App = () => {
       <Button action={addNeutralFeedback} text="neutral" />
       <Button action={addBadFeedback} text="bad" />
       {
-        getTotal() > 0 
+        getTotal() > 0
           ? <Statistics good={good} neutral={neutral} bad={bad} total={getTotal()} />
           : <p>No feedback given</p>
       }
@@ -30,26 +30,35 @@ const Statistics = ({ good, neutral, bad, total }) => {
   return (
     <>
       <h2>Statistics</h2>
-      <StatisticLine text="good" value={good} />
-      <StatisticLine text="neutral" value={neutral} />
-      <StatisticLine text="bad" value={bad} />
-      <StatisticLine text="all" value={total} />
-      <StatisticLine text="average" value={((good - bad) / (total)) || 0} />
-      <StatisticLine text="positive" value={((good / total) || 0) + '%'} />
+      <table>
+        <tbody>
+          <StatisticRow text="good" value={good} />
+          <StatisticRow text="neutral" value={neutral} />
+          <StatisticRow text="bad" value={bad} />
+          <StatisticRow text="all" value={total} />
+          <StatisticRow text="average" value={((good - bad) / (total)) || 0} />
+          <StatisticRow text="positive" value={((good / total) || 0) + '%'} />
+        </tbody>
+      </table>
     </>
   )
 }
 
-const Button = ({text, action}) => {
+const Button = ({ text, action }) => {
   return (
     <button onClick={action}>{text}</button>
   )
 }
 
-const StatisticLine  = ({text, value}) => {
+const StatisticRow = ({ text, value }) => {
   return (
-    <div>{text} {value}</div>
+    <tr>
+      <td>{text}</td>
+      <td>{value}</td>
+    </tr>
   )
 }
 
-ReactDOM.createRoot(document.getElementById('root')).render(<App />)
+const rootElement = document.getElementById('root')
+const root = ReactDOM.createRoot(rootElement)
+root.render(<App />)
