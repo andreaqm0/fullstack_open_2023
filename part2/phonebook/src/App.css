@@ -1,10 +1,22 @@
 .msg {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: #ccc;
     padding: 0.7em 1em;
     border: 3px solid;
     border-radius: 0.5em;
     margin-bottom: 10px;
     font-size: larger;
+    font-weight: 600;
+    max-width: 50%;
+}
+
+.msg>button {
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+    font-size: large;
     font-weight: 600;
 }
 

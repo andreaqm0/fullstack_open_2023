@@ -25,7 +25,7 @@ const App = () => {
   return (
     <div>
       <h2>Phonebook</h2>
-      <Message msg={messagge} />
+      <Message msg={messagge} setMessage={setMessage} />
       <Filter filter={filter} changeHandler={changeHandler} />
       <h2>add a new</h2>
       <PersonForm persons={persons} setPersons={setPersons} setMessage={setMessage} />
